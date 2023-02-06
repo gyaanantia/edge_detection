@@ -57,11 +57,11 @@ always_comb begin
                 gray_rd_en = 1'b1;
                 shift_en = 1'b1;
                 count = count + 1;
-                if (count >= REG_SIZE - 2 - IMG_WIDTH) begin
+                if (count >= (REG_SIZE - 2 - IMG_WIDTH)) begin
                     img_out_wr_en = 1'b1;
                     img_out_din = 8'b0;
                 end
-                state_c = (count < REG_SIZE) ? s0 : s1;
+                state_c = (count < REG_SIZE - 2) ? s0 : s1;
             end else begin
                 state_c = s0;
             end
@@ -75,10 +75,10 @@ always_comb begin
                 horiz = (horiz < 0) ? -horiz : horiz;
                 vert = (vert < 0) ? -vert : vert;
 
-                if (count % IMG_WIDTH - 1 == 0 || count % IMG_WIDTH == 0) begin
+                if (count % IMG_WIDTH - 1 == 0 || count % IMG_WIDTH - 1 == 1) begin
                     img_out_din = 8'b0;
                 end else begin
-                    img_out_din = (horiz + vert > 255) ? 8'd255 : 8'(horiz + vert);
+                    img_out_din = (horiz + vert > 8'd255) ? 8'd255 : 8'(horiz + vert);
                 end
                 count = count + 1;
                 gray_rd_en = 1'b1;

@@ -1,5 +1,5 @@
 module shift_reg #(
-    parameter IMG_WIDTH = 540,
+    parameter IMG_WIDTH = 720,
     parameter REG_SIZE = (IMG_WIDTH * 2) + 3
 )
 (
@@ -10,7 +10,7 @@ module shift_reg #(
     output logic [7:0] [7:0] pixels_out
 );
 
-reg [REG_SIZE-1:0] [7:0] sr;
+logic [REG_SIZE-1:0] [7:0] sr;
 
 always_ff @(posedge clock or posedge reset) begin
     if (reset == 1'b1) begin

@@ -18,5 +18,8 @@ add wave -noupdate -group my_uvm_tb/edgedetect_inst/sobel_fifo -radix hexadecima
 add wave -noupdate -group my_uvm_tb/edgedetect_inst/sobel_inst
 add wave -noupdate -group my_uvm_tb/edgedetect_inst/sobel_inst -radix hexadecimal /my_uvm_tb/edgedetect_inst/sobel_inst/*
 
+add wave -noupdate -group my_uvm_tb/edgedetect_inst/sobel_inst/sr
+add wave -noupdate -group my_uvm_tb/edgedetect_inst/sobel_inst/sr -radix hexadecimal /my_uvm_tb/edgedetect_inst/sobel_inst/sr/*
+
 add wave -noupdate -group my_uvm_tb/edgedetect_inst/outgoing
 add wave -noupdate -group my_uvm_tb/edgedetect_inst/outgoing -radix hexadecimal /my_uvm_tb/edgedetect_inst/outgoing/*

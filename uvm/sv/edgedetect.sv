@@ -2,7 +2,7 @@ module edgedetect #(
     parameter IMG_HEIGHT = 540,
     parameter IMG_WIDTH = 720,
     parameter REG_SIZE = (IMG_WIDTH * 2) + 3,
-    parameter FIFO_BUFFER_SIZE = 256,
+    parameter FIFO_BUFFER_SIZE = 1024,
     parameter IO_FIFO_DATA_WIDTH = 24,
     parameter INTERNAL_FIFO_DATA_WIDTH = 8
 )
