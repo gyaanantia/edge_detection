@@ -16,7 +16,7 @@ module edgedetect #(
 
     input   logic           img_rd_en,
     output  logic           img_empty,
-    output  logic   [23:0]  img_dout
+    output  logic   [7:0]   img_dout
 );
 
 logic gray_rd_en;
@@ -80,24 +80,24 @@ sobel #(
     .REG_SIZE(REG_SIZE)
 ) sobel_inst (
     .clock(clock),
-    .reset(reset).
+    .reset(reset),
     .gray_rd_en(sobel_rd_en),
     .gray_empty(sobel_empty),
     .gray_dout(sobel_dout),
     .img_out_wr_en(img_out_wr_en),
     .img_out_full(img_out_full),
-    .img_out_din(img_out_din)
+    .img_out_din(img_out_din),
     .done(sobel_done)
 );
 
 fifo #(
     .FIFO_BUFFER_SIZE(FIFO_BUFFER_SIZE),
-    .FIFO_DATA_WIDTH(IO_FIFO_DATA_WIDTH)
+    .FIFO_DATA_WIDTH(INTERNAL_FIFO_DATA_WIDTH)
 ) outgoing (
     .reset(reset),
     .wr_clk(clock),
     .wr_en(img_out_wr_en),
-    .din({3{img_out_din}}),
+    .din(img_out_din),
     .full(img_out_full),
     .rd_clk(clock),
     .rd_en(img_rd_en),

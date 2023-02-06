@@ -7,9 +7,9 @@ module sobel #(
     input  logic        clock,
     input  logic        reset,
 
-    output logic        gray_rd_en;
-    input  logic        gray_empty;
-    input  logic        gray_dout;
+    output logic        gray_rd_en,
+    input  logic        gray_empty,
+    input  logic        gray_dout,
 
     output logic        img_out_wr_en,
     input  logic        img_out_full,
@@ -48,46 +48,52 @@ always_comb begin
     gray_rd_en = 1'b0;
     img_out_wr_en = 1'b0;
     img_out_din = 8'b0;
-    done = 1'b0;
+    done_c = 1'b0;
 
     case (state)
         s0: begin
-            done_c = 1'b0;
-            gray_rd_en = 1'b1;
-            shift_en = 1'b1;
-            count = count + 1;
-            if (count >= REG_SIZE - 2 - IMG_WIDTH) begin
-                img_out_wr_en = 1'b1;
-                img_out_din = 8'b0;
+            if (gray_empty == 1'b0 && img_out_full == 1'b0) begin
+                done_c = 1'b0;
+                gray_rd_en = 1'b1;
+                shift_en = 1'b1;
+                count = count + 1;
+                if (count >= REG_SIZE - 2 - IMG_WIDTH) begin
+                    img_out_wr_en = 1'b1;
+                    img_out_din = 8'b0;
+                end
+                state_c = (count < REG_SIZE) ? s0 : s1;
             end
-            state_c = (count < REG_SIZE) ? s0 : s1;
         end
 
         s1: begin
-            horiz = -sr_dout[7] + -(sr_dout[6] << 1) + -sr_dout[5] + sr_dout[2] + (sr_dout[1] << 1) + sr_dout[0];
-            vert = -sr_dout[7] + sr_dout[5] + -(sr_dout[4] << 1) + (sr_dout[3] << 1) + -sr_dout[2] + sr_dout[0];
-            img_out_wr_en = 1'b1;
-            horiz = (horiz < 0) ? -horiz : horiz;
-            vert = (vert < 0) ? -vert : vert;
+            if (gray_empty == 1'b0 && img_out_full == 1'b0) begin
+                horiz = -sr_dout[7] + -(sr_dout[6] << 1) + -sr_dout[5] + sr_dout[2] + (sr_dout[1] << 1) + sr_dout[0];
+                vert = -sr_dout[7] + sr_dout[5] + -(sr_dout[4] << 1) + (sr_dout[3] << 1) + -sr_dout[2] + sr_dout[0];
+                img_out_wr_en = 1'b1;
+                horiz = (horiz < 0) ? -horiz : horiz;
+                vert = (vert < 0) ? -vert : vert;
 
-            if (count % IMG_WIDTH - 1 == 0 || count % IMG_WIDTH == 0) begin
-                img_out_din = 8'b0;
-            end else begin
-                img_out_din = (horiz + vert > 255) ? 8'd255 : 8'(horiz + vert);
+                if (count % IMG_WIDTH - 1 == 0 || count % IMG_WIDTH == 0) begin
+                    img_out_din = 8'b0;
+                end else begin
+                    img_out_din = (horiz + vert > 255) ? 8'd255 : 8'(horiz + vert);
+                end
+                count = count + 1;
+                gray_rd_en = 1'b1;
+                shift_en = 1'b1;
+
+                state_c = (count > ((IMG_HEIGHT - 1) * IMG_WIDTH)) ? s2 : s1;
             end
-            count = count + 1;
-            gray_rd_en = 1'b1;
-            shift_en = 1'b1;
-
-            state_c = (count > ((IMG_HEIGHT - 1) * IMG_WIDTH)) ? s2 : s1;
         end
 
         s2: begin
-            img_out_wr_en = 1'b1;
-            img_out_din = 8'b0;
-            count = count + 1;
-            state_c = (count < (IMG_HEIGHT * IMG_WIDTH)) ? s2 : s0;
-            done_c = (count < (IMG_HEIGHT * IMG_WIDTH)) ? 1'b0 : 1'b1;
+            if (img_out_full == 1'b0) begin
+                img_out_wr_en = 1'b1;
+                img_out_din = 8'b0;
+                count = count + 1;
+                state_c = (count < (IMG_HEIGHT * IMG_WIDTH)) ? s2 : s0;
+                done_c = (count < (IMG_HEIGHT * IMG_WIDTH)) ? 1'b0 : 1'b1;
+            end
         end
     endcase
 end
