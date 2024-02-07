@@ -1,0 +1,10 @@
+@N: MF284 |Setting synthesis effort to medium for the design
+@N: MF915 |Option synthesis_strategy=advanced is enabled. 
+@N: MF248 |Running in 64-bit mode.
+@N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
+@N: MF284 |Setting synthesis effort to medium for the design
+@N: MH105 |UMR3 is only supported for HAPS-80.
+@N: MH105 |UMR3 is only supported for HAPS-80.
+@N: BN362 :"/home/gfa2226/fpga/edge_detect/uvm/sv/sobel.sv":43:0:43:8|Removing sequential instance done (in view: work.sobel_540s_720s_1443s(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN225 |Writing default property annotation file /home/gfa2226/fpga/edge_detect/uvm/syn/rev_2/shift_reg.sap.
+@N: MO225 :"/home/gfa2226/fpga/edge_detect/uvm/sv/sobel.sv":43:0:43:8|There are no possible illegal states for state machine state[3:0] (in view: work.sobel_540s_720s_1443s(verilog)); safe FSM implementation is not required.

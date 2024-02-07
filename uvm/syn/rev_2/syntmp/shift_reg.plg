@@ -1,0 +1,13 @@
+@P:  Part : ep4ce6ea22-7
+@P:  Worst Slack : -6.487
+@P:  edgedetect|clock - Estimated Frequency : 23.1 MHz
+@P:  edgedetect|clock - Requested Frequency : 27.2 MHz
+@P:  edgedetect|clock - Estimated Period : 43.244
+@P:  edgedetect|clock - Requested Period : 36.758
+@P:  edgedetect|clock - Slack : -6.487
+@P: edgedetect Part : ep4ce6ea22-7
+@P: edgedetect I/O ATOMs : 28
+@P: edgedetect Total LUTs : 849 
+@P: edgedetect Register bits : 193
+@P: edgedetect DSP Blocks : 0 (0 nine-bit DSP elements)
+@P:  CPU Time : 0h:00m:04s

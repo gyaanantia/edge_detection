@@ -2,7 +2,7 @@ module edgedetect #(
     parameter IMG_HEIGHT = 540,
     parameter IMG_WIDTH = 720,
     parameter REG_SIZE = (IMG_WIDTH * 2) + 3,
-    parameter FIFO_BUFFER_SIZE = 256,
+    parameter FIFO_BUFFER_SIZE = 1024,
     parameter IO_FIFO_DATA_WIDTH = 24,
     parameter INTERNAL_FIFO_DATA_WIDTH = 8
 )
@@ -30,7 +30,7 @@ logic [7:0] sobel_dout;
 logic sobel_empty;
 logic img_out_wr_en;
 logic img_out_full;
-logic img_out_din;
+logic [7:0] img_out_din;
 logic sobel_done;
 
 fifo #(

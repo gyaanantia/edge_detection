@@ -1,0 +1,2 @@
+@W: FA406 |Environment variable QUARTUS_ROOTDIR not set. Cannot determine PAR version.
+@W: MT529 :"/home/gfa2226/fpga/edge_detect/uvm/sv/fifo.sv":63:4:63:12|Found inferred clock edgedetect|clock which controls 266 sequential elements including incoming.empty. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 

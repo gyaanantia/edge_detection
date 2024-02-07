@@ -1,0 +1,6 @@
+edgedetect.outgoing work fifo 0 1
+edgedetect.sobel_inst.sr work shift_reg 0 1
+edgedetect.sobel_inst work sobel 0 1
+edgedetect.sobel_fifo work fifo 0 1
+edgedetect.gray work grayscale 0 1
+edgedetect.incoming work fifo 0 1

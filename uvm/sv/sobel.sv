@@ -95,7 +95,7 @@ always_comb begin
                 gray_rd_en = 1'b1;
                 shift_en = 1'b1;
 
-                state_c = (count > (((IMG_HEIGHT-1) * IMG_WIDTH) + 718)) ? s2 : s1;
+                state_c = (count > (((IMG_HEIGHT-1) * IMG_WIDTH) + (IMG_WIDTH - 2))) ? s2 : s1;
             end else begin
                 state_c = s1;
             end

@@ -1,0 +1,9 @@
+
+. Module name, ATOMS, ARITHMETIC MODE, REGISTERS, SYNC RAMS, MACs
+. edgedetect, 250, 0, 193, 5, 0
+.	. fifo_24s_1024s_11s, 23, 0, 23, 1, 0
+.	. fifo_8s_1024s_11s_1, 15, 0, 23, 1, 0
+.	. fifo_8s_1024s_11s_1_0, 21, 0, 23, 1, 0
+.	. grayscale, 21, 0, 9, 0, 0
+.	. sobel_540s_720s_1443s, 170, 0, 115, 2, 0
+.	.	. shift_reg_720s_1443s, 11, 0, 80, 2, 0

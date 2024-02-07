@@ -1,0 +1,212 @@
+
+Copyright (C) 1994-2018 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify (R) Premier
+Build: O-2018.09-SP1
+Install: /vol/synopsys/fpga/O-2018.09-SP1
+OS: Red Hat Enterprise Linux 8.7 (Ootpa)
+Hostname: joker.ece.northwestern.edu
+max virtual memory: unlimited (bytes)
+max user processes: 62381
+max stack size: 8388608 (bytes)
+
+
+Implementation : rev_2
+
+#### START OF AREA REPORT #####[
+
+Part:			EP4CE6EA22-7 (Altera)
+
+--------------------------------------------------------------------------
+########   Utilization report for  Top level view:   edgedetect   ########
+==========================================================================
+
+SEQUENTIAL ATOMS
+Name          Total elements     Utilization     Notes
+------------------------------------------------------
+REGISTERS     193                100 %                
+======================================================
+Total SEQUENTIAL ATOMS in the block edgedetect:	193 (17.74 % Utilization)
+
+
+COMBINATIONAL ATOMS
+Name      Total elements     Utilization     Notes
+--------------------------------------------------
+ATOMS     250                100 %                
+==================================================
+Total COMBINATIONAL ATOMS in the block edgedetect:	250 (22.98 % Utilization)
+
+
+RAMS
+Name          Total elements     Number of bits     Utilization     Notes
+-------------------------------------------------------------------------
+SYNC RAMS     5                  52416              100 %                
+=========================================================================
+Total RAMS in the block edgedetect:	5 (0.46 % Utilization)
+
+------------------------------------------------------------------------
+########   Utilization report for  cell:   fifo_24s_1024s_11s   ########
+Instance path:   edgedetect.fifo_24s_1024s_11s                          
+========================================================================
+
+SEQUENTIAL ATOMS
+Name          Total elements     Utilization     Notes
+------------------------------------------------------
+REGISTERS     23                 11.9 %               
+======================================================
+Total SEQUENTIAL ATOMS in the block edgedetect.fifo_24s_1024s_11s:	23 (2.11 % Utilization)
+
+
+COMBINATIONAL ATOMS
+Name      Total elements     Utilization     Notes
+--------------------------------------------------
+ATOMS     23                 9.2 %                
+==================================================
+Total COMBINATIONAL ATOMS in the block edgedetect.fifo_24s_1024s_11s:	23 (2.11 % Utilization)
+
+
+RAMS
+Name          Total elements     Number of bits     Utilization     Notes
+-------------------------------------------------------------------------
+SYNC RAMS     1                  24576              20 %                 
+=========================================================================
+Total RAMS in the block edgedetect.fifo_24s_1024s_11s:	1 (0.09 % Utilization)
+
+-------------------------------------------------------------------------
+########   Utilization report for  cell:   fifo_8s_1024s_11s_1   ########
+Instance path:   edgedetect.fifo_8s_1024s_11s_1                          
+=========================================================================
+
+SEQUENTIAL ATOMS
+Name          Total elements     Utilization     Notes
+------------------------------------------------------
+REGISTERS     23                 11.9 %               
+======================================================
+Total SEQUENTIAL ATOMS in the block edgedetect.fifo_8s_1024s_11s_1:	23 (2.11 % Utilization)
+
+
+COMBINATIONAL ATOMS
+Name      Total elements     Utilization     Notes
+--------------------------------------------------
+ATOMS     15                 6 %                  
+==================================================
+Total COMBINATIONAL ATOMS in the block edgedetect.fifo_8s_1024s_11s_1:	15 (1.38 % Utilization)
+
+
+RAMS
+Name          Total elements     Number of bits     Utilization     Notes
+-------------------------------------------------------------------------
+SYNC RAMS     1                  8192               20 %                 
+=========================================================================
+Total RAMS in the block edgedetect.fifo_8s_1024s_11s_1:	1 (0.09 % Utilization)
+
+---------------------------------------------------------------------------
+########   Utilization report for  cell:   fifo_8s_1024s_11s_1_0   ########
+Instance path:   edgedetect.fifo_8s_1024s_11s_1_0                          
+===========================================================================
+
+SEQUENTIAL ATOMS
+Name          Total elements     Utilization     Notes
+------------------------------------------------------
+REGISTERS     23                 11.9 %               
+======================================================
+Total SEQUENTIAL ATOMS in the block edgedetect.fifo_8s_1024s_11s_1_0:	23 (2.11 % Utilization)
+
+
+COMBINATIONAL ATOMS
+Name      Total elements     Utilization     Notes
+--------------------------------------------------
+ATOMS     21                 8.4 %                
+==================================================
+Total COMBINATIONAL ATOMS in the block edgedetect.fifo_8s_1024s_11s_1_0:	21 (1.93 % Utilization)
+
+
+RAMS
+Name          Total elements     Number of bits     Utilization     Notes
+-------------------------------------------------------------------------
+SYNC RAMS     1                  8192               20 %                 
+=========================================================================
+Total RAMS in the block edgedetect.fifo_8s_1024s_11s_1_0:	1 (0.09 % Utilization)
+
+---------------------------------------------------------------
+########   Utilization report for  cell:   grayscale   ########
+Instance path:   edgedetect.grayscale                          
+===============================================================
+
+SEQUENTIAL ATOMS
+Name          Total elements     Utilization     Notes
+------------------------------------------------------
+REGISTERS     9                  4.66 %               
+======================================================
+Total SEQUENTIAL ATOMS in the block edgedetect.grayscale:	9 (0.83 % Utilization)
+
+
+COMBINATIONAL ATOMS
+Name      Total elements     Utilization     Notes
+--------------------------------------------------
+ATOMS     21                 8.4 %                
+==================================================
+Total COMBINATIONAL ATOMS in the block edgedetect.grayscale:	21 (1.93 % Utilization)
+
+---------------------------------------------------------------------------
+########   Utilization report for  cell:   sobel_540s_720s_1443s   ########
+Instance path:   edgedetect.sobel_540s_720s_1443s                          
+===========================================================================
+
+SEQUENTIAL ATOMS
+Name          Total elements     Utilization     Notes
+------------------------------------------------------
+REGISTERS     115                59.6 %               
+======================================================
+Total SEQUENTIAL ATOMS in the block edgedetect.sobel_540s_720s_1443s:	115 (10.57 % Utilization)
+
+
+COMBINATIONAL ATOMS
+Name      Total elements     Utilization     Notes
+--------------------------------------------------
+ATOMS     170                68 %                 
+==================================================
+Total COMBINATIONAL ATOMS in the block edgedetect.sobel_540s_720s_1443s:	170 (15.62 % Utilization)
+
+
+RAMS
+Name          Total elements     Number of bits     Utilization     Notes
+-------------------------------------------------------------------------
+SYNC RAMS     2                  11456              40 %                 
+=========================================================================
+Total RAMS in the block edgedetect.sobel_540s_720s_1443s:	2 (0.18 % Utilization)
+
+--------------------------------------------------------------------------
+########   Utilization report for  cell:   shift_reg_720s_1443s   ########
+Instance path:   sobel_540s_720s_1443s.shift_reg_720s_1443s               
+==========================================================================
+
+SEQUENTIAL ATOMS
+Name          Total elements     Utilization     Notes
+------------------------------------------------------
+REGISTERS     80                 41.5 %               
+======================================================
+Total SEQUENTIAL ATOMS in the block sobel_540s_720s_1443s.shift_reg_720s_1443s:	80 (7.35 % Utilization)
+
+
+COMBINATIONAL ATOMS
+Name      Total elements     Utilization     Notes
+--------------------------------------------------
+ATOMS     11                 4.4 %                
+==================================================
+Total COMBINATIONAL ATOMS in the block sobel_540s_720s_1443s.shift_reg_720s_1443s:	11 (1.01 % Utilization)
+
+
+RAMS
+Name          Total elements     Number of bits     Utilization     Notes
+-------------------------------------------------------------------------
+SYNC RAMS     2                  11456              40 %                 
+=========================================================================
+Total RAMS in the block sobel_540s_720s_1443s.shift_reg_720s_1443s:	2 (0.18 % Utilization)
+
+
+##### END OF AREA REPORT #####]
+

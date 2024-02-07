@@ -1,0 +1,12 @@
+LUTs for combinational functions (total_luts): 849
+Non I/O Registers (non_io_reg):	193
+I/O Pins: 38
+I/O registers (total_io_reg): 0
+DSP Blocks (dsp_used): 0 (15)
+Memory Bits: 52416
+
+Req Freq: 27.2 MHz
+
+Clock Cycles: 778327
+
+Throughput: 272000000 / 778327 = 35 frames/second

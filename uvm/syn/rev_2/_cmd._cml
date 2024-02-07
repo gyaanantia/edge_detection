@@ -1,0 +1,1 @@
+-distcompmode -link    -encrypt       -top work.edgedetect -osyn /home/gfa2226/fpga/edge_detect/uvm/syn/rev_2/synwork/shift_reg_comp.srs /home/gfa2226/fpga/edge_detect/uvm/syn/rev_2/synwork//distcomp/distcomp0/distcomp0.srs    
